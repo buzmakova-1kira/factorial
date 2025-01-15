@@ -1,7 +1,15 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
+// Функция для вычисления суммы факториалов от 1 до n
+string sum_of_factorials(int n) {
+    string total_sum = "0";
 
+    for (int i = 1; i <= n; i++) {
+        total_sum = add(total_sum, factorial(i));
+    }
+    return total_sum;
+}
 // Функция для получения корректного ввода от пользователя
 int get_input() {
     int n;
