@@ -1,7 +1,23 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
-
+// Функция для умножения длинного числа 
+string multiply(const string& num, int digit) {
+    string result = "";
+    int carry = 0;
+    for (int i = num.length() - 1; i >= 0; i--) {
+        int product = (num[i] - '0') * digit + carry;
+        result += (product % 10) + '0'; // добавляем последнюю цифру результата
+        carry = product / 10; // сохраняем перенос
+    }
+    while (carry) {
+        result += (carry % 10) + '0';
+        carry /= 10;
+    }
+    // Перевернуть результат, так как мы добавляли цифры в обратном порядке
+    reverse(result.begin(), result.end());
+    return result;
+}
 // Функция для вычисления факториала
 string factorial(int n) {
     string result = "1"; // 0! и 1! равны 1
