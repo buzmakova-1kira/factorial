@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
+
 // Функция для вычисления факториала
 string factorial(int n) {
     string result = "1"; // 0! и 1! равны 1
