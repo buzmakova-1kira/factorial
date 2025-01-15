@@ -1,6 +1,14 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
+// Функция для вычисления факториала
+string factorial(int n) {
+    string result = "1"; // 0! и 1! равны 1
+    for (int i = 2; i <= n; i++) {
+        result = multiply(result, i);
+    }
+    return result;
+}
 // Функция для вычисления суммы факториалов от 1 до n
 string sum_of_factorials(int n) {
     string total_sum = "0";
